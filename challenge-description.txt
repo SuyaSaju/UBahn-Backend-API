@@ -1,0 +1,94 @@
+Challenge Overview
+Challenge Objectives
+
+Given the swagger specification, implement the defined endpoints in Nodejs. You will be updating an existing API code base and not creating a new one
+
+
+Project Background
+
+Our client wants to create an employee management system to determine employees that are no longer working on active projects and to understand their qualifications and expertise for suitability in other projects
+
+
+Technology Stack
+
+Nodejs version 12
+
+Amazon Quantum Ledger Database
+
+
+Code access
+
+We will share the code base in the contest forum. This code base already contains certain models and their endpoints. You need to update the same code base with new models and endpoints.
+
+
+Individual requirements
+
+Implement the api in nodejs (Major Requirement)
+
+We will share a swagger specification with you in the contest forum
+
+You need to implement an API in nodejs that adheres to this specification
+
+You will be using Amazon QLDB as the database
+
+You need to implement endpoints for the following resources:
+
+ExternalProfiles
+
+Achievements
+
+AchievementsProvider
+
+UserAttributes
+
+Attributes
+
+AttributeGroups
+
+We will also share a ERD diagram. You need to implement validations based on the ERD diagram (example - verify that reference field exists or in some instances, you will have to do a JOIN to get records based on value in another table)
+
+
+### NOT IN SCOPE
+Handle Groups (Minor Requirement)
+
+The ERD diagram that we will provide also contains groups.
+
+This makes a reference to Topcoder’s Groups API.
+
+You may have to make updates to the UBahn API to interface with the Groups API. We are still discussing this internally. In the interest of saving time, we are going ahead with the contest but we will update this requirement in the next 24 hours with more information which will be in scope for this contest.
+
+This requirement is no longer in scope for this contest. Please check the contest forum for more details.
+### NOT IN SCOPE
+
+Deployment guide and validation document
+
+Update the existing README file with any additional info, as needed, for this contest
+
+
+Important Notes
+
+Follow conventions used in the current api code base
+
+Use standard for your lint tool
+
+Use the async await pattern
+
+You can use the submission api as reference. Note that this uses yield, but you need to use async await pattern.
+
+Update the existing helper scripts that populate the database with mock values for an easy local deployment and development - minor requirement
+
+POSTMAN collection is nice-to-have
+
+Docker based deployment is also nice-to-have
+
+Tests are not needed
+
+Final Submission Guidelines
+Submit a zip file that contains your solution
+
+
+Payments
+Topcoder will compensate members in accordance with our standard payment policies, unless otherwise specified in this challenge. For information on payment policies, setting up your profile to receive payments, and general payment questions, please refer to ‌https://www.topcoder.com/thrive/articles/Payment%20Policies%20and%20Instructions
+
+Reliability Rating and Bonus
+For challenges that have a reliability bonus, the bonus depends on the reliability rating at the moment of registration for that project. A participant with no previous projects is considered to have no reliability rating, and therefore gets no bonus. Reliability bonus does not apply to Digital Run winnings. Since reliability rating is based on the past 15 projects, it can only have 15 discrete values.
