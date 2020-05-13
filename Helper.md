@@ -8,10 +8,14 @@
     - [X] API Implementation
     - [X] Postman collection
 - [ ] UserAttributes
-- [ ] Attributes
-- [ ] AttributeGroups
     - [ ] API Implementation - In progress
     - [ ] Postman collection
+- [ ] Attributes
+    - [X] API Implementation
+    - [X] Postman collection
+- [ ] AttributeGroups
+    - [X] API Implementation
+    - [X] Postman collection
 
 ### ERD
 - [ ] validations based on the ERD diagram
@@ -31,6 +35,7 @@ but you need to use async await pattern
 - [ ] Run lint
 - [ ] Add code comments to improve score
 - [ ] Review service.js
+- [ ] Do optimization in [index.js](src/models/index.js) and mention in Readme
 
 ## Questions
 - [ ] If there are no results, what status code HEAD API endpoints should return? 
