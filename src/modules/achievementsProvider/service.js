@@ -16,7 +16,7 @@ const methods = helper.getServiceMethods(
       dbQueries.push(`name like '%${query.name}%'`)
     }
     return dbQueries
-  })
+  }, [['name']])
 
 module.exports = {
   ...methods
