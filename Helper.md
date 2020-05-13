@@ -2,6 +2,8 @@
 ### API Endpoints
 - [ ] ExternalProfiles
 - [ ] Achievements
+    - [ ] API Implementation - In progress
+    - [ ] Postman collection
 - [ ] AchievementsProvider
     - [X] API Implementation
     - [X] Postman collection
@@ -40,10 +42,10 @@ HTTP STATUS CODE 200 would be fine?
 [https://us-east-2.console.aws.amazon.com/qldb/home?region=us-east-2#query-editor:/ledger/ubahn-db]()
 
 ### Creating a table with mock data
-* Under [scripts](scripts) folder you can find mock data
+* Under [data](scripts/db/data) folder you can find mock data
 * To create a new table, 
-    - create a mock json under [data](scripts/db/data) folder, 
     - create a model under [models](src/models), 
+    - create a mock json under [data](scripts/db/data) folder, 
     - update [index.js](src/models/index.js) 
     - and run the genData.js using ```node scripts/db/genData.js```
 
