@@ -2,14 +2,16 @@
 ### API Endpoints
 - [ ] ExternalProfiles
 - [ ] Achievements
-    - [ ] API Implementation - In progress
-    - [ ] Postman collection
+    - [X] API Implementation
+    - [X] Postman collection
 - [ ] AchievementsProvider
     - [X] API Implementation
     - [X] Postman collection
 - [ ] UserAttributes
 - [ ] Attributes
 - [ ] AttributeGroups
+    - [ ] API Implementation - In progress
+    - [ ] Postman collection
 
 ### ERD
 - [ ] validations based on the ERD diagram

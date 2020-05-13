@@ -5,6 +5,7 @@
 const User = require('./User')
 const AchievementsProvider = require('./AchievementsProvider')
 const Achievement = require('./Achievement')
+const AttributeGroup = require('./AttributeGroup')
 const Role = require('./Role')
 const SkillsProvider = require('./SkillsProvider')
 const Skill = require('./Skill')
@@ -27,7 +28,8 @@ module.exports = {
   consts,
   DBHelper,
   AchievementsProvider,
-  Achievement
+  Achievement,
+  AttributeGroup
 }
 /**
  * create table
@@ -43,4 +45,5 @@ module.exports.init = async () => {
   await DBHelper.createTable(UsersSkill)
   await DBHelper.createTable(AchievementsProvider)
   await DBHelper.createTable(Achievement)
+  await DBHelper.createTable(AttributeGroup)
 }

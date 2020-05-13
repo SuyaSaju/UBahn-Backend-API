@@ -92,3 +92,27 @@ Topcoder will compensate members in accordance with our standard payment policie
 
 Reliability Rating and Bonus
 For challenges that have a reliability bonus, the bonus depends on the reliability rating at the moment of registration for that project. A participant with no previous projects is considered to have no reliability rating, and therefore gets no bonus. Reliability bonus does not apply to Digital Run winnings. Since reliability rating is based on the past 15 projects, it can only have 15 discrete values.
+
+Unique Keys:
+For attributes table, combination of attributeGroupId and name will be unique.
+- For achievements provider table, name will be unique
+
+The correct list will thus be:
+
+ExternalProfiles
+(userId, organizationId)
+
+Achievements
+(userId, achievementsProviderId)
+
+AchievementsProvider
+(name)
+
+UserAttributes
+(userId, attributeId)
+
+Attributes
+(attributeGroupId, name)
+
+AttributeGroups
+(name)
