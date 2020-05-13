@@ -16,12 +16,14 @@ const methods = helper.getServiceMethods(
     certifiedDate: joi.date().format('iso').required()
   },
   { name: joi.string() },
-  { name: joi.string(), userId: joi.string().required() },
+  {
+    achievementsproviderName: joi.string(),
+    userId: joi.string().required()
+  },
   async query => {
-    console.log(`query: ${JSON.stringify(query)}`)
-    const dbQueries = [`userId = '${query.userId}'`]
-    if (query.name) {
-      dbQueries.push(`name like '%${query.name}%'`)
+    let dbQueries = [`userId = '${query.userId}'`]
+    if (query.achievementsproviderName) {
+      dbQueries = ['SELECT * FROM Achievement, AchievementsProvider', `Achievement.userId = '${query.userId}'`, `AchievementsProvider.name like'%${query.achievementsproviderName}%'`]
     }
     return dbQueries
   })

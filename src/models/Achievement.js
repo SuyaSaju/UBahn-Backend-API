@@ -1,7 +1,7 @@
 const { RecordObject } = require('./BaseObject')
 
 /**
- * Achievements model
+ * Achievement model
  */
 class Achievement extends RecordObject {
   constructor () {
@@ -15,5 +15,5 @@ class Achievement extends RecordObject {
   }
 }
 
-Achievement.tableName = 'Achievements'
+Achievement.tableName = 'Achievement'
 module.exports = Achievement
