@@ -7,7 +7,7 @@ class Achievement extends RecordObject {
   constructor () {
     super()
     this.userId = null
-    this.providerId = null
+    this.achievementsProviderId = null
     this.name = null
     this.uri = null
     this.certifierId = null

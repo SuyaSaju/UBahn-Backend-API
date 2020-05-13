@@ -28,6 +28,7 @@ but you need to use async await pattern
 - [ ] Update the existing README file with any additional info, as needed, for this contest
 - [ ] Run lint
 - [ ] Add code comments to improve score
+- [ ] Review service.js
 
 ## Questions
 - [ ] If there are no results, what status code HEAD API endpoints should return? 
@@ -48,5 +49,11 @@ HTTP STATUS CODE 200 would be fine?
     - create a mock json under [data](scripts/db/data) folder, 
     - update [index.js](src/models/index.js) 
     - and run the genData.js using ```node scripts/db/genData.js```
+### Creating a new service
+- Copy the existing one of the modules under [modules](src/modules) folder
+ and rename it to your desired module.
+- Update line number 9 at service.js to your newly created module.
+- 
+- Update the existing header comments
 
 
