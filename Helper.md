@@ -33,7 +33,9 @@ but you need to use async await pattern
 ## Questions
 - [ ] If there are no results, what status code HEAD API endpoints should return? 
 HTTP STATUS CODE 200 would be fine?
-- [ ] For Http Body, all the fields are required or all are optional?
+- [X] For Http Body, all the fields are required or all are optional?
+- [ ] Considering achievementsProviderId and userId is unique, 
+{{HOST}}/users/{userId}/achievements/:achievementsProviderId will return only one result. But the swagger doc
 
 ## Helper Docs
 
