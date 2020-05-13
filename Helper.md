@@ -3,8 +3,8 @@
 - [ ] ExternalProfiles
 - [ ] Achievements
 - [ ] AchievementsProvider
-    - [ ] API Implementation - In progress
-    - [ ] Postman collection
+    - [X] API Implementation
+    - [X] Postman collection
 - [ ] UserAttributes
 - [ ] Attributes
 - [ ] AttributeGroups
@@ -13,7 +13,9 @@
 - [ ] validations based on the ERD diagram
 
 ### OTHERS
-- [ ] use the submission api as reference. Note that this uses yield, but you need to use async await pattern
+- [ ] use the submission api as reference. Note that this uses yield, 
+but you need to use async await pattern
+    - https://github.com/topcoder-platform/submissions-api/blob/develop/src/routes/SubmissionRoutes.js
 - [ ] Docker
 - [ ] Postman collection
 
@@ -23,20 +25,19 @@
 - [ ] Deployment guide and validation document
 - [ ] Update the existing README file with any additional info, as needed, for this contest
 - [ ] Run lint
+- [ ] Add code comments to improve score
+
+## Questions
+- [ ] If there are no results, what status code HEAD API endpoints should return? 
+HTTP STATUS CODE 200 would be fine?
 
 ## Helper Docs
 
 ### Swagger spec ref:
-https://app.swaggerhub.com/apis/ponsuyambu/u-bahn_api/1.0.0#/
+[https://app.swaggerhub.com/apis/ponsuyambu/u-bahn_api/1.0.0#/]()
 
 ### Sample Ledger DB for testing
 [https://us-east-2.console.aws.amazon.com/qldb/home?region=us-east-2#query-editor:/ledger/ubahn-db]()
-
-### TODO
-#### Before submission
-1. Remove secret keys from default.js
-2. Remove Helper.md folder
-3. 
 
 ### Creating a table with mock data
 * Under [scripts](scripts) folder you can find mock data
