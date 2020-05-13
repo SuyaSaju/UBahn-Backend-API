@@ -28,6 +28,7 @@ but you need to use async await pattern
 - [ ] Postman collection
 
 ### Before submission
+- [ ] Use proper authentication and remove bypassing
 - [ ] Remove secret keys from default.js
 - [ ] Remove Helper.md folder
 - [ ] Deployment guide and validation document
@@ -35,6 +36,7 @@ but you need to use async await pattern
 - [ ] Run lint
 - [ ] Add code comments to improve score
 - [ ] Review service.js
+- [ ] Do not hard code tables names and use via constants and mention in readme
 - [ ] Do optimization in [index.js](src/models/index.js) and mention in Readme
 
 ## Questions
