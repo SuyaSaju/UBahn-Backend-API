@@ -24,7 +24,7 @@ module.exports = {
   },
   '/users/:userId/achievements/:achievementsProviderId': {
     get: {
-      method: Controller.get,
+      method: Controller.search,
       auth: 'jwt',
       scopes: ['read:achievement', 'all:achievement']
     },
