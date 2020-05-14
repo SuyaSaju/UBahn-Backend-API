@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "67870cba-bdd9-4825-9f61-b747ae6d4757",
+		"_postman_id": "ed156640-1389-461b-967a-bc0ebb76734a",
 		"name": "UBahn_API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -14,7 +14,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9be82782-7a85-4db7-b4f3-aa3f739abb85",
+								"id": "c994c019-a54d-4d4d-8916-95ddea45e12b",
 								"exec": [
 									"var rsp = pm.response.json();",
 									"if(rsp.id) pm.environment.set(\"userId\", rsp.id);"
@@ -251,7 +251,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ff8c198b-a5fc-421c-8930-ff4f7ac2cc29",
+								"id": "61e8217b-2901-4f2f-bd22-c800d199a86d",
 								"exec": [
 									"var rsp = pm.response.json();",
 									"if(rsp.id) pm.environment.set(\"roleId\", rsp.id);"
@@ -483,7 +483,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "aba26e50-293b-482e-b023-47adba0f4ff3",
+								"id": "21d3162b-0da0-4537-9ec5-2ca7cec417e1",
 								"exec": [
 									""
 								],
@@ -722,7 +722,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "65a0007b-379b-42f6-801e-cdd2d195a586",
+								"id": "4422abf4-cb25-4b23-b242-288579ecb56d",
 								"exec": [
 									"var rsp = pm.response.json();",
 									"if(rsp.id) pm.environment.set(\"organizationId\", rsp.id);"
@@ -954,7 +954,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "624175cd-8315-42a3-a316-32a34fbcfadf",
+								"id": "c59edf97-a57b-4314-8e69-a320184ba399",
 								"exec": [
 									"var rsp = pm.response.json();",
 									"if(rsp.id) pm.environment.set(\"skillsProviderId\", rsp.id);"
@@ -1186,7 +1186,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c7176c3b-5fea-4236-96cb-cfd7ff1383ee",
+								"id": "c37898cb-744e-4079-b5c7-055814de3a23",
 								"exec": [
 									"var rsp = pm.response.json();",
 									"if(rsp.id) pm.environment.set(\"skillId\", rsp.id);"
@@ -1412,7 +1412,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c1c418d7-bcda-4fd0-95ec-62050e002ea7",
+								"id": "dff80111-ef3d-47d9-bbcb-d69d92602bda",
 								"exec": [
 									""
 								],
@@ -1645,6 +1645,1339 @@
 						}
 					},
 					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "achievementsProviders",
+			"item": [
+				{
+					"name": "{{HOST}}/achievementsProviders/:providerId",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"achievements_provider_update\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/achievementsProviders/{{providerId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"achievementsProviders",
+								"{{providerId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/achievementsProviders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/achievementsProviders",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"achievementsProviders"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "ski",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/achievementsProviders",
+					"request": {
+						"method": "HEAD",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/achievementsProviders?name=achievements_provider_1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"achievementsProviders"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "achievements_provider_1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/achievementsProviders",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6bcacd5a-63f9-4a51-bd9e-5ae8a38d76ff",
+								"exec": [
+									"var rsp = pm.response.json();",
+									"if(rsp.id) pm.environment.set(\"skillsProviderId\", rsp.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"achievements_provider_2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/achievementsProviders",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"achievementsProviders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/achievementsProviders/:providerId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/achievementsProviders/{{providerId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"achievementsProviders",
+								"{{providerId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/achievementsProviders/:providerId",
+					"request": {
+						"method": "HEAD",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/achievementsProviders/{{providerId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"achievementsProviders",
+								"{{providerId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/achievementsProviders/:providerId",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/achievementsProviders/{{providerId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"achievementsProviders",
+								"{{providerId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "achievements",
+			"item": [
+				{
+					"name": "{{HOST}}/users/{userId}/achievements",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/achievements",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"achievements"
+							],
+							"query": [
+								{
+									"key": "achievementsproviderName",
+									"value": "achi",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/users/{userId}/achievements",
+					"request": {
+						"method": "HEAD",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/achievements",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"achievements"
+							],
+							"query": [
+								{
+									"key": "achievementsproviderName",
+									"value": "achi",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/users/{userId}/achievements",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e7d908e0-c447-4369-b1a8-145ed7175b69",
+								"exec": [
+									"var rsp = pm.response.json();",
+									"if(rsp.id) pm.environment.set(\"skillsProviderId\", rsp.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"achievementsProviderId\": \"{{providerId}}\",\n    \"name\": \"achievement_4\",\n    \"uri\": \"https://cetificate.url\",\n    \"certifierId\": \"certifier_24114141\",\n    \"certifiedDate\": \"2020-01-05T11:02:10.574Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/achievements",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"achievements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/users/{userId}/achievements/:achievementsProviderId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/achievements/{{achievementsProviderId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"achievements",
+								"{{achievementsProviderId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/users/{userId}/achievements/:achievementsProviderId",
+					"request": {
+						"method": "HEAD",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/achievements/{{achievementsProviderId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"achievements",
+								"{{achievementsProviderId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/users/{userId}/achievements/:achievementsProviderId Copy",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"achievement_2\",\n    \"uri\": \"https://cetificate2.url\",\n    \"certifierId\": \"certifier_24114141\",\n    \"certifiedDate\": \"2020-01-05T11:02:10.574Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/achievements/{{achievementsProviderId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"achievements",
+								"{{achievementsProviderId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/users/{userId}/achievements/:achievementsProviderId",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/achievements/{{achievementsProviderId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"achievements",
+								"{{achievementsProviderId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6ff5177f-a8e8-40ca-a2ba-a695f7470c71",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f355639-83ba-436f-860c-2f6b69e7e6a3",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "userAttributes",
+			"item": [
+				{
+					"name": "{{HOST}}/users/{userId}/attributes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/attributes",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"attributes"
+							],
+							"query": [
+								{
+									"key": "attributeName",
+									"value": "attribute_1",
+									"disabled": true
+								},
+								{
+									"key": "attributeGroupName",
+									"value": "attribute_group_1",
+									"disabled": true
+								},
+								{
+									"key": "attributeGroupId",
+									"value": "{{attributeGroupId}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/users/{userId}/attributes",
+					"request": {
+						"method": "HEAD",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/attributes",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"attributes"
+							],
+							"query": [
+								{
+									"key": "attributeName",
+									"value": "attribute_1",
+									"disabled": true
+								},
+								{
+									"key": "attributeGroupName",
+									"value": "attribute_group_1",
+									"disabled": true
+								},
+								{
+									"key": "attributeGroupId",
+									"value": "{{attributeGroupId}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/users/{userId}/attributes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c175f169-e856-4e13-b464-5d83e991df41",
+								"exec": [
+									"var rsp = pm.response.json();",
+									"if(rsp.id) pm.environment.set(\"skillsProviderId\", rsp.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"attributeId\": \"{{attributeId}}\",\n  \"value\": \"a_value\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/attributes",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"attributes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/users/{userId}/attributes/:attributeId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/attributes/{{attributeId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"attributes",
+								"{{attributeId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/users/{userId}/attributes/:attributeId",
+					"request": {
+						"method": "HEAD",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/attributes/{{attributeId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"attributes",
+								"{{attributeId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/users/{userId}/achievements/:achievementsProviderId",
+					"request": {
+						"method": "HEAD",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/achievements/{{achievementsProviderId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"achievements",
+								"{{achievementsProviderId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/users/{userId}/attributes/:attributeId",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"value\" : \"new value\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/attributes/{{attributeId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"attributes",
+								"{{attributeId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/users/{userId}/attributes/:attributeId",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/attributes/{{attributeId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"attributes",
+								"{{attributeId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2bd04403-6c8a-4f07-83af-7856c2a3dfb4",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "89e240de-44cf-412d-b4ea-5b07e64c33a0",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "attributeGroups",
+			"item": [
+				{
+					"name": "{{HOST}}/attributeGroups",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/attributeGroups",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"attributeGroups"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "attribute_group_1",
+									"disabled": true
+								},
+								{
+									"key": "organizationId",
+									"value": "{{organizationId}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/attributeGroups",
+					"request": {
+						"method": "HEAD",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/attributeGroups",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"attributeGroups"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "organizationId",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/attributeGroups",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3d68bba0-e693-48eb-8ee3-5602170e5e68",
+								"exec": [
+									"var rsp = pm.response.json();",
+									"if (rsp.id) pm.environment.set(\"skillId\", rsp.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"attribute_group_2\",\n  \"organizationId\": \"{{organizationId}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/attributeGroups",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"attributeGroups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/attributeGroups/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/attributeGroups/{{attributeGroupId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"attributeGroups",
+								"{{attributeGroupId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/attributeGroups/:id",
+					"request": {
+						"method": "HEAD",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/attributeGroups/{{attributeGroupId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"attributeGroups",
+								"{{attributeGroupId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/attributeGroups/:id",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"attribute_group_changed\",\n  \"organizationId\" : \"{{organizationId}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/attributeGroups/{{attributeGroupId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"attributeGroups",
+								"{{attributeGroupId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/attributeGroups/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/attributeGroups/{{attributeGroupId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"attributeGroups",
+								"{{attributeGroupId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "cde3a432-445e-4a00-afea-643eca439b2a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b27fcc6d-4188-4561-b051-6d32c8c6d1a5",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "attributes",
+			"item": [
+				{
+					"name": "{{HOST}}/attributes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/attributes",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"attributes"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "attribute_1",
+									"disabled": true
+								},
+								{
+									"key": "attributeGroupId",
+									"value": "{{attributeGroupId}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/attributes",
+					"request": {
+						"method": "HEAD",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/attributes",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"attributes"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "attribute_1",
+									"disabled": true
+								},
+								{
+									"key": "attributeGroupId",
+									"value": "{{attributeGroupId}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/attributes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "361fad83-0c99-4fd2-940e-4816c4d60143",
+								"exec": [
+									"var rsp = pm.response.json();",
+									"if (rsp.id) pm.environment.set(\"skillId\", rsp.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"attribute_2\",\n  \"attributeGroupId\": \"{{attributeGroupId}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/attributes",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"attributes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/attributes/:attributeId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/attributes/{{attributeId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"attributes",
+								"{{attributeId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/attributes/:attributeId",
+					"request": {
+						"method": "HEAD",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/attributes/{{attributeId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"attributes",
+								"{{attributeId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/attributes/:attributeId",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"attribute_name_changed\",\n  \"attributeGroupId\" : \"{{attributeGroupId}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/attributes/{{attributeId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"attributes",
+								"{{attributeId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/attributes/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/attributes/{{attributeId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"attributes",
+								"{{attributeId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "64b83ef5-8fd9-41ec-8ded-e6579c3b6c0c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "483740cb-4b43-43fd-bc54-7ad13db4e44a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			],
 			"protocolProfileBehavior": {}
