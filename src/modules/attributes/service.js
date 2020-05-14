@@ -22,7 +22,7 @@ const methods = helper.getServiceMethods(
   async (query) => {
     const queries = []
     if (query.name) {
-      queries.push(`name = '${query.name}'`)
+      queries.push(`name like '%${query.name}%'`)
     }
     // both params are optional queries, hence no if else!
     if (query.attributeGroupId) {
