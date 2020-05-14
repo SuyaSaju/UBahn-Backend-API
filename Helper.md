@@ -1,19 +1,21 @@
 ## Tasks
 ### API Endpoints
-- [ ] ExternalProfiles
-- [ ] Achievements
+- [X] ExternalProfiles
     - [X] API Implementation
     - [X] Postman collection
-- [ ] AchievementsProvider
+- [X] Achievements
     - [X] API Implementation
     - [X] Postman collection
-- [ ] UserAttributes
-    - [ ] API Implementation - In progress
-    - [ ] Postman collection
-- [ ] Attributes
+- [X] AchievementsProvider
     - [X] API Implementation
     - [X] Postman collection
-- [ ] AttributeGroups
+- [X] UserAttributes
+    - [X] API Implementation
+    - [X] Postman collection
+- [X] Attributes
+    - [X] API Implementation
+    - [X] Postman collection
+- [X] AttributeGroups
     - [X] API Implementation
     - [X] Postman collection
 
@@ -41,6 +43,7 @@ but you need to use async await pattern
 - [ ] Docker error fix
 - [ ] User attribute routes scope fix
 - [ ] index creation for new table
+- [ ] Added feature to remove id field from output
 
 ## Questions
 - [ ] If there are no results, what status code HEAD API endpoints should return? 

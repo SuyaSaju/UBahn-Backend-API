@@ -76,11 +76,11 @@ function buildQueryByParams (params) {
  * @param searchSchema the search joi schema
  * @param buildDBQuery the async build db query function
  * @param uniqueFields the unique fields
- * @param excludeFields should be array,
+ * @param excludeFieldsFromOutput should be array,
  *        contains the field names that has to be removed from the output data.
  * @return {any} methods
  */
-function getServiceMethods (Model, createSchema, patchSchema, searchSchema, buildDBQuery, uniqueFields, excludeFields) {
+function getServiceMethods (Model, createSchema, patchSchema, searchSchema, buildDBQuery, uniqueFields, excludeFieldsFromOutput) {
   const models = require('../models/index')
   const { permissionCheck, checkIfExists, getAuthUser } = require('./helper')
 
@@ -206,19 +206,12 @@ function getServiceMethods (Model, createSchema, patchSchema, searchSchema, buil
    * @param result either the result object or result array
    */
   function excludeFieldsFromResult (result) {
-    JSON.stringify('excludeFieldsFromResult')
-    console.log('result' + JSON.stringify(result))
-    console.log('excludeFields' + JSON.stringify(excludeFields))
-    if (excludeFields && Array.isArray(excludeFields)) {
-      console.log('exclude field exists')
-      excludeFields.forEach((excludeField) => {
+    if (excludeFieldsFromOutput && Array.isArray(excludeFieldsFromOutput)) {
+      excludeFieldsFromOutput.forEach((excludeField) => {
         if (result) {
-          console.log('result exists')
           if (Array.isArray(result)) {
-            console.log('result is array')
             result.forEach((item) => delete item[excludeField])
           } else {
-            console.log('result is object')
             delete result[excludeField]
           }
         }
