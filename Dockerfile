@@ -6,5 +6,7 @@ COPY ./src ./src
 COPY ./config ./config
 COPY ./scripts ./scripts
 
+EXPOSE 3001
+
 RUN npm install
-ENTRYPOINT [ "node", "app.js" ]
+ENTRYPOINT [ "npm", "run", "mock-and-start" ]

@@ -5,7 +5,10 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "lint": "standard \"**/*.js\" --fix"
+    "mock-and-start": "node ./scripts/db/genData.js && node app.js",
+    "lint": "standard \"**/*.js\" --fix",
+    "docker-build": "docker build -t ubhan .",
+    "docker-run": "docker run -p 3001:3001 ubhan"
   },
   "repository": {
     "type": "git",
