@@ -32,7 +32,7 @@ const methods = helper.getServiceMethods(
     ]
 
     if (query.attributeId) {
-      dbQueries.push(`attributeId = '${query.attributeId}'`)
+      dbQueries.push(`UserAttributes.attributeId = '${query.attributeId}'`)
     }
     if (query.attributeName) {
       dbQueries.push(`Attributes.name like '%${query.attributeName}%'`)

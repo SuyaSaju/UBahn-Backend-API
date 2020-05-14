@@ -39,6 +39,8 @@ but you need to use async await pattern
 - [ ] Do not hard code tables names and use via constants and mention in readme
 - [ ] Do optimization in [index.js](src/models/index.js) and mention in Readme
 - [ ] Docker error fix
+- [ ] User attribute routes scope fix
+- [ ] index creation for new table
 
 ## Questions
 - [ ] If there are no results, what status code HEAD API endpoints should return? 
