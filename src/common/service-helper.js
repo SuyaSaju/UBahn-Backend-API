@@ -76,9 +76,11 @@ function buildQueryByParams (params) {
  * @param searchSchema the search joi schema
  * @param buildDBQuery the async build db query function
  * @param uniqueFields the unique fields
+ * @param excludeFields should be array,
+ *        contains the field names that has to be removed from the output data.
  * @return {any} methods
  */
-function getServiceMethods (Model, createSchema, patchSchema, searchSchema, buildDBQuery, uniqueFields) {
+function getServiceMethods (Model, createSchema, patchSchema, searchSchema, buildDBQuery, uniqueFields, excludeFields) {
   const models = require('../models/index')
   const { permissionCheck, checkIfExists, getAuthUser } = require('./helper')
 
@@ -97,6 +99,7 @@ function getServiceMethods (Model, createSchema, patchSchema, searchSchema, buil
     dbEntity.created = new Date()
     dbEntity.createdBy = getAuthUser(auth)
     await models.DBHelper.save(Model, dbEntity)
+    excludeFieldsFromResult(dbEntity)
     return dbEntity
   }
 
@@ -116,13 +119,14 @@ function getServiceMethods (Model, createSchema, patchSchema, searchSchema, buil
   async function patch (id, entity, auth, params) {
     await makeSureRefExist(entity)
 
-    const dbEntity = await get(id, auth, params)
+    const dbEntity = await get(id, auth, params, false)
     const newEntity = new Model()
     _.extend(newEntity, dbEntity, entity)
     newEntity.updated = new Date()
     newEntity.updatedBy = getAuthUser(auth)
     await makeSureUnique(Model, newEntity, uniqueFields)
     await models.DBHelper.save(Model, newEntity)
+    excludeFieldsFromResult(newEntity)
     return newEntity
   }
 
@@ -138,9 +142,10 @@ function getServiceMethods (Model, createSchema, patchSchema, searchSchema, buil
    * @param id the device id
    * @param auth the auth obj
    * @param params the query params
+   * @param removeExcludedFields weather to remove excludedFields or not
    * @return {Promise} the db device
    */
-  async function get (id, auth, params) {
+  async function get (id, auth, params, removeExcludedFields = true) {
     let recordObj
     if (_.isNil(params) || _.isEmpty(params)) {
       recordObj = await models.DBHelper.get(Model, id)
@@ -152,6 +157,9 @@ function getServiceMethods (Model, createSchema, patchSchema, searchSchema, buil
       }
     }
     permissionCheck(auth, recordObj)
+    if (removeExcludedFields) {
+      excludeFieldsFromResult(recordObj)
+    }
     return recordObj
   }
 
@@ -170,6 +178,9 @@ function getServiceMethods (Model, createSchema, patchSchema, searchSchema, buil
       dbQueries.push(`${Model.tableName}.createdBy = '${getAuthUser(auth)}'`)
     }
     const items = await models.DBHelper.find(Model, dbQueries)
+
+    excludeFieldsFromResult(items)
+
     return { items, meta: { total: items.length } }
   }
 
@@ -186,8 +197,33 @@ function getServiceMethods (Model, createSchema, patchSchema, searchSchema, buil
    * @return {Promise<void>} no data returned
    */
   async function remove (id, auth, params) {
-    await get(id, auth, params) // check exist
+    await get(id, auth, params, false) // check exist
     await models.DBHelper.delete(Model, id, buildQueryByParams(params))
+  }
+
+  /**
+   * Excludes fields from the given result
+   * @param result either the result object or result array
+   */
+  function excludeFieldsFromResult (result) {
+    JSON.stringify('excludeFieldsFromResult')
+    console.log('result' + JSON.stringify(result))
+    console.log('excludeFields' + JSON.stringify(excludeFields))
+    if (excludeFields && Array.isArray(excludeFields)) {
+      console.log('exclude field exists')
+      excludeFields.forEach((excludeField) => {
+        if (result) {
+          console.log('result exists')
+          if (Array.isArray(result)) {
+            console.log('result is array')
+            result.forEach((item) => delete item[excludeField])
+          } else {
+            console.log('result is object')
+            delete result[excludeField]
+          }
+        }
+      })
+    }
   }
 
   return {

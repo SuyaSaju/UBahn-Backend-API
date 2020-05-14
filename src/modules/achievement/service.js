@@ -25,7 +25,7 @@ const methods = helper.getServiceMethods(
   },
   {
     achievementsproviderName: joi.string(),
-    userId: joi.string().required(),
+    userId: joi.string().required()
   },
   async query => {
     let dbQueries = [`userId = '${query.userId}'`]
@@ -35,7 +35,10 @@ const methods = helper.getServiceMethods(
       dbQueries = [`userId = '${query.userId}'`, `achievementsProviderId = '${query.achievementsProviderId}'`]
     }
     return dbQueries
-  }, [['userId', 'achievementsProviderId']])
+  },
+  [['userId', 'achievementsProviderId']],
+  ['id']
+)
 
 module.exports = {
   ...methods
