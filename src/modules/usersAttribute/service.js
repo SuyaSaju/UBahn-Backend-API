@@ -24,15 +24,25 @@ const methods = helper.getServiceMethods(
     userId: joi.string().required()
   },
   async query => {
-    let dbQueries = [`userId = '${query.userId}'`]
+    // let dbQueries = [`userId = '${query.userId}'`]
+    const dbQueries = ['SELECT * FROM UserAttributes, Attributes, AttributeGroups',
+      `UserAttributes.userId = '${query.userId}'`,
+      'UserAttributes.attributeId = Attributes.id',
+      'Attributes.attributeGroupId = AttributeGroups.id'
+    ]
+
     if (query.attributeId) {
-      dbQueries = [`userId = '${query.userId}'`, `attributeId = '${query.attributeId}'`]
+      dbQueries.push(`attributeId = '${query.attributeId}'`)
     }
-    // if (query.achievementsproviderName) {
-    //   dbQueries = ['SELECT * FROM Achievement, AchievementsProvider', `Achievement.userId = '${query.userId}'`, `AchievementsProvider.name like '%${query.achievementsproviderName}%'`]
-    // } else if (query.achievementsProviderId) {
-    //   dbQueries = [`userId = '${query.userId}'`, `achievementsProviderId = '${query.achievementsProviderId}'`]
-    // }
+    if (query.attributeName) {
+      dbQueries.push(`Attributes.name like '%${query.attributeName}%'`)
+    }
+    if (query.attributeGroupName) {
+      dbQueries.push(`AttributeGroups.name like '%${query.attributeGroupName}%'`)
+    }
+    if (query.attributeGroupId) {
+      dbQueries.push(`AttributeGroups.id = '${query.attributeGroupId}'`)
+    }
     return dbQueries
   }, [['userId', 'attributeId']])
 
