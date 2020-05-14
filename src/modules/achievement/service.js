@@ -13,7 +13,7 @@ const methods = helper.getServiceMethods(
     uri: joi.string().required(),
     name: joi.string().required(),
     certifierId: joi.string().required(),
-    certifiedDate: joi.date().format('iso').required()
+    certifiedDate: joi.date().format('iso')
   },
   {
     userId: joi.string().required(),
