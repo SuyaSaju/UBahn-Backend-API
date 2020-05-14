@@ -13,7 +13,11 @@ async function makeSureRefExist (entity) {
   const modelMap = {
     skillProviderId: models.SkillsProvider,
     roleId: models.Role,
-    userId: models.User
+    userId: models.User,
+    achievementsProviderId: models.AchievementsProvider,
+    attributeId: models.Attribute,
+    attributeGroupId: models.AttributeGroup,
+    organizationId: models.Organization
   }
   const keys = Object.keys(entity)
   for (let i = 0; i < keys.length; i++) {
