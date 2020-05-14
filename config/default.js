@@ -5,7 +5,7 @@
 module.exports = {
   LOG_LEVEL: process.env.LOG_LEVEL || 'debug',
   PORT: process.env.PORT || 3001,
-  AUTH_SECRET: process.env.AUTH_SECRET || 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJUb3Bjb2RlciBVc2VyIl0sImlzcyI6Imh0dHBzOi8vYXBpLnRvcGNvZGVyLmNvbSIsImhhbmRsZSI6InRjLXVzZXIiLCJleHAiOjE2ODU1NzE0NjAsInVzZXJJZCI6IjIzMTY2NzY2IiwiaWF0IjoxNTg1NTcwODYwLCJlbWFpbCI6InRjLXVzZXJAZ21haWwuY29tIiwianRpIjoiMGYxZWYxZDMtMmIzMy00OTAwLWJiNDMtNDhmMjI4NWY5NjI3In0.eBhXqSBe8zMRg2nBeGeZDgKiJdAYs0zOMzGfJCjWfcs',
+  AUTH_SECRET: process.env.AUTH_SECRET || 'CLIENT_SECRET',
   VALID_ISSUERS: process.env.VALID_ISSUERS ? process.env.VALID_ISSUERS.replace(/\\"/g, '')
     : '["https://topcoder-dev.auth0.com/", "https://api.topcoder.com"]',
   API_VERSION: 'api/1.0',
