@@ -1,5 +1,5 @@
 /**
- * the achievement routes
+ * the userAttributes routes
  */
 
 const Controller = require('./controller')
