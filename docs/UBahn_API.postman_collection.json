@@ -2981,6 +2981,245 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "externalProfiles",
+			"item": [
+				{
+					"name": "{{HOST}}users/:userId/externalProfiles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/externalProfiles",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"externalProfiles"
+							],
+							"query": [
+								{
+									"key": "organizationName",
+									"value": "organization_update",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}users/:userId/externalProfiles",
+					"request": {
+						"method": "HEAD",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/externalProfiles",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"externalProfiles"
+							],
+							"query": [
+								{
+									"key": "organizationName",
+									"value": "organization_update",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}users/:userId/externalProfiles",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organizationId\": \"{{organizationId}}\",\n    \"uri\": \"http://new.uri\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/externalProfiles",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"externalProfiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}users/:userId/externalProfiles/:organizationId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/externalProfiles/{{organizationId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"externalProfiles",
+								"{{organizationId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}users/:userId/externalProfiles/:organizationId",
+					"request": {
+						"method": "HEAD",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/externalProfiles/{{organizationId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"externalProfiles",
+								"{{organizationId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}users/:userId/externalProfiles/:organizationId",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"uri\" : \"http://updated-external-profile.uri\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/externalProfiles/{{organizationId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"externalProfiles",
+								"{{organizationId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}users/:userId/externalProfiles/:organizationId",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/users/{{userId}}/externalProfiles/{{organizationId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"externalProfiles",
+								"{{organizationId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2e8a48e3-a178-46ad-baf1-e32ef0b35cc5",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "01f5dd3d-7d54-4d65-be33-229bfa5e9419",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"protocolProfileBehavior": {}
