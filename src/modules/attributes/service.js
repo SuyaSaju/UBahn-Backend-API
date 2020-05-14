@@ -29,7 +29,7 @@ const methods = helper.getServiceMethods(
       queries.push(`attributeGroupId = '${query.attributeGroupId}'`)
     }
     return queries
-  }, [['name']])
+  }, [['name', 'attributeGroupId']])
 
 module.exports = {
   ...methods
