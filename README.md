@@ -153,7 +153,7 @@ you can use below token to test role and permissions
   ```json
   eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzY29wZXMiOiJhbGw6dXNlciBhbGw6cm9sZSBhbGw6c2tpbGwgYWxsOnVzZXJzUm9sZSBhbGw6b3JnYW5pemF0aW9uIGFsbDpza2lsbHNQcm92aWRlciIsImlzcyI6Imh0dHBzOi8vYXBpLnRvcGNvZGVyLmNvbSIsImhhbmRsZSI6InRjLW1tLTAxIiwiZXhwIjoxNjg1NTcxNDYwLCJpYXQiOjE1ODU1NzA4NjAsImp0aSI6IjBmMWVmMWQzLTJiMzMtNDkwMC1iYjQzLTQ4ZjIyODVmOTYzMCJ9.BlDIYsCTcHTib9XhpyzpO-KkMTTMy0egq_7qlLWRmoM
   ```
-## To Developers
+## Dev Guide
 As the code is more generic, now you can easily follow the below steps to create a new service.
 
 ### Creating a table

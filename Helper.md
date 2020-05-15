@@ -23,7 +23,7 @@
 - [X] validations based on the ERD diagram
 
 ### OTHERS
-- [ ] use the submission api as reference. Note that this uses yield, 
+- [X] use the submission api as reference. Note that this uses yield, 
 but you need to use async await pattern
     - https://github.com/topcoder-platform/submissions-api/blob/develop/src/routes/SubmissionRoutes.js
 - [X] Docker
@@ -37,14 +37,14 @@ but you need to use async await pattern
 - [X] Do optimization in [index.js](src/models/index.js) and mention in Readme
 - [X] Docker error fix
 - [X] User attribute routes scope fix
-- [ ] index creation for new table
+- [X] index creation for new table
 - [X] Added feature to remove id field from output
 
 ### Final 
-- [ ] Remove secret keys from default.js
+- [X] Remove secret keys from default.js
 - [ ] Remove Helper.md folder
-- [ ] Run lint
-- [ ] Add code comments to improve score
+- [X] Run lint
+- [X] Add code comments to improve score
 
 
 
