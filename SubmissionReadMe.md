@@ -33,7 +33,7 @@
 ### Improvements Done
 
 As part of this challenge below improvements also made to fix the existing issues or 
-to improve the code quality
+to improve the code quality.
 
 - [X] As per the requirement, for certain end points(like Achievements, UserAttribute etc)
 the id need not to be send to the client. For that we created a new generic
@@ -43,4 +43,5 @@ now it is easier to config the table creation process
 - [X] Instead of referring the hardcoded table names, those are used from existing models
 - [X] Added how to create a new service section on Readme, so that next services can be created 
 easily as the code is now more generic.
+- [X] Created the index on table where it is needed
 

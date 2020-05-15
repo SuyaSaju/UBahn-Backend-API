@@ -153,3 +153,20 @@ you can use below token to test role and permissions
   ```json
   eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzY29wZXMiOiJhbGw6dXNlciBhbGw6cm9sZSBhbGw6c2tpbGwgYWxsOnVzZXJzUm9sZSBhbGw6b3JnYW5pemF0aW9uIGFsbDpza2lsbHNQcm92aWRlciIsImlzcyI6Imh0dHBzOi8vYXBpLnRvcGNvZGVyLmNvbSIsImhhbmRsZSI6InRjLW1tLTAxIiwiZXhwIjoxNjg1NTcxNDYwLCJpYXQiOjE1ODU1NzA4NjAsImp0aSI6IjBmMWVmMWQzLTJiMzMtNDkwMC1iYjQzLTQ4ZjIyODVmOTYzMCJ9.BlDIYsCTcHTib9XhpyzpO-KkMTTMy0egq_7qlLWRmoM
   ```
+## To Developers
+As the code is more generic, now you can easily follow the below steps to create a new service.
+
+### Creating a table
+* Under [data](scripts/db/data) folder you can find mock data for the all existing service
+* To create a new table for the service, 
+    - create a model under [models](src/models) with table name and fields, 
+    - create a mock json under [data](scripts/db/data) folder, 
+    - update [index.js](src/models/index.js) to include the table name 
+    - and run the genData.js using ```node scripts/db/genData.js``` if you need mock data.
+
+### Creating a new service
+- Copy the existing one of the modules under [modules](src/modules) (Ex. achievement) folder
+ and rename it to your desired new service.
+- Update line number 9 at service.js to your newly created module/service.
+- Update the schema for your new service methods(search, patch etc)
+- Configure uniqueFields, excludeFieldsFromOutput fields based on requirements
