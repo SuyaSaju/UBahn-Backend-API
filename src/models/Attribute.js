@@ -12,4 +12,7 @@ class Attribute extends RecordObject {
 }
 
 Attribute.tableName = 'Attributes'
+Attribute.additionalSql = [
+  `CREATE INDEX ON ${Attribute.tableName} (name)`
+]
 module.exports = Attribute

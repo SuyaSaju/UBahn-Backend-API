@@ -11,4 +11,7 @@ class AchievementsProvider extends RecordObject {
 }
 
 AchievementsProvider.tableName = 'AchievementsProvider'
+AchievementsProvider.additionalSql = [
+  `CREATE INDEX ON ${AchievementsProvider.tableName} (name)`
+]
 module.exports = AchievementsProvider
