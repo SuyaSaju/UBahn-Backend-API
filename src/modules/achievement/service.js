@@ -30,7 +30,10 @@ const methods = helper.getServiceMethods(
   async query => {
     let dbQueries = [`userId = '${query.userId}'`]
     if (query.achievementsproviderName) {
-      dbQueries = ['SELECT * FROM Achievement, AchievementsProvider', `Achievement.userId = '${query.userId}'`, `AchievementsProvider.name like '%${query.achievementsproviderName}%'`]
+      dbQueries = [
+        `SELECT * FROM ${models.Achievement.tableName}, ${models.AchievementsProvider.tableName}`,
+        `${models.Achievement.tableName}.userId = '${query.userId}'`,
+        `${models.AchievementsProvider.tableName}.name like '%${query.achievementsproviderName}%'`]
     } else if (query.achievementsProviderId) {
       dbQueries = [`userId = '${query.userId}'`, `achievementsProviderId = '${query.achievementsProviderId}'`]
     }

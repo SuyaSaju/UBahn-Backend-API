@@ -22,15 +22,15 @@ const methods = helper.getServiceMethods(
     organizationName: joi.string()
   },
   async query => {
-    const dbQueries = ['SELECT * FROM ExternalProfiles, Organization',
-      `ExternalProfiles.userId = '${query.userId}'`,
-      'ExternalProfiles.organizationId = Organization.id'
+    const dbQueries = [`SELECT * FROM ${models.ExternalProfile.tableName}, ${models.Organization.tableName}`,
+      `${models.ExternalProfile.tableName}.userId = '${query.userId}'`,
+      `${models.ExternalProfile.tableName}.organizationId = ${models.Organization.tableName}.id`
     ]
     if (query.organizationId) {
-      dbQueries.push(`ExternalProfiles.organizationId = '${query.attributeId}'`)
+      dbQueries.push(`${models.ExternalProfile.tableName}.organizationId = '${query.attributeId}'`)
     }
     if (query.organizationName) {
-      dbQueries.push(`Organization.name like '%${query.organizationName}%'`)
+      dbQueries.push(`${models.Organization.tableName}.name like '%${query.organizationName}%'`)
     }
     return dbQueries
   }, [['userId', 'organizationId']])

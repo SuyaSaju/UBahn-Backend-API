@@ -1,5 +1,5 @@
 /**
- * the achievement controller
+ * the userAttribute controller
  */
 
 const service = require('./service')

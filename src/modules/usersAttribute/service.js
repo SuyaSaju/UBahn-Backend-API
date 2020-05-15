@@ -24,24 +24,24 @@ const methods = helper.getServiceMethods(
     userId: joi.string().required()
   },
   async query => {
-    // let dbQueries = [`userId = '${query.userId}'`]
-    const dbQueries = ['SELECT * FROM UserAttributes, Attributes, AttributeGroups',
-      `UserAttributes.userId = '${query.userId}'`,
-      'UserAttributes.attributeId = Attributes.id',
-      'Attributes.attributeGroupId = AttributeGroups.id'
+    const dbQueries = [`SELECT * FROM ${models.UserAttribute.tableName},
+     ${models.Attribute.tableName}, ${models.AttributeGroup.tableName}`,
+      `${models.UserAttribute.tableName}.userId = '${query.userId}'`,
+      `${models.UserAttribute.tableName}.attributeId = ${models.Attribute.tableName}.id`,
+      `${models.Attribute.tableName}.attributeGroupId = ${models.AttributeGroup.tableName}.id`
     ]
 
     if (query.attributeId) {
-      dbQueries.push(`UserAttributes.attributeId = '${query.attributeId}'`)
+      dbQueries.push(`${models.UserAttribute.tableName}.attributeId = '${query.attributeId}'`)
     }
     if (query.attributeName) {
-      dbQueries.push(`Attributes.name like '%${query.attributeName}%'`)
+      dbQueries.push(`${models.Attribute.tableName}.name like '%${query.attributeName}%'`)
     }
     if (query.attributeGroupName) {
-      dbQueries.push(`AttributeGroups.name like '%${query.attributeGroupName}%'`)
+      dbQueries.push(`${models.AttributeGroup.tableName}.name like '%${query.attributeGroupName}%'`)
     }
     if (query.attributeGroupId) {
-      dbQueries.push(`AttributeGroups.id = '${query.attributeGroupId}'`)
+      dbQueries.push(`${models.AttributeGroup.tableName}.id = '${query.attributeGroupId}'`)
     }
     return dbQueries
   },
