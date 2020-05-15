@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "ed156640-1389-461b-967a-bc0ebb76734a",
+		"_postman_id": "0f9ab928-f593-4bdb-81e9-685019d39549",
 		"name": "UBahn_API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -14,7 +14,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c994c019-a54d-4d4d-8916-95ddea45e12b",
+								"id": "ed59d640-bfa6-424a-96da-e16bbd1b96e2",
 								"exec": [
 									"var rsp = pm.response.json();",
 									"if(rsp.id) pm.environment.set(\"userId\", rsp.id);"
@@ -251,7 +251,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "61e8217b-2901-4f2f-bd22-c800d199a86d",
+								"id": "e2f84b86-6e4c-4e9d-9906-87ef0005aef4",
 								"exec": [
 									"var rsp = pm.response.json();",
 									"if(rsp.id) pm.environment.set(\"roleId\", rsp.id);"
@@ -483,7 +483,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "21d3162b-0da0-4537-9ec5-2ca7cec417e1",
+								"id": "446cf1cd-771f-45db-a832-c592697c16b6",
 								"exec": [
 									""
 								],
@@ -722,7 +722,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4422abf4-cb25-4b23-b242-288579ecb56d",
+								"id": "0a8e3fff-962f-4209-944f-6913555f02ec",
 								"exec": [
 									"var rsp = pm.response.json();",
 									"if(rsp.id) pm.environment.set(\"organizationId\", rsp.id);"
@@ -954,7 +954,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c59edf97-a57b-4314-8e69-a320184ba399",
+								"id": "059bdd86-91a2-4dc6-a059-b4e29ef11731",
 								"exec": [
 									"var rsp = pm.response.json();",
 									"if(rsp.id) pm.environment.set(\"skillsProviderId\", rsp.id);"
@@ -1186,7 +1186,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c37898cb-744e-4079-b5c7-055814de3a23",
+								"id": "2cd2a1af-a255-4cca-9ff8-770031d77062",
 								"exec": [
 									"var rsp = pm.response.json();",
 									"if(rsp.id) pm.environment.set(\"skillId\", rsp.id);"
@@ -1412,7 +1412,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "dff80111-ef3d-47d9-bbcb-d69d92602bda",
+								"id": "176a01f1-2711-4a33-97ce-8bb77c0eed3d",
 								"exec": [
 									""
 								],
@@ -1653,45 +1653,6 @@
 			"name": "achievementsProviders",
 			"item": [
 				{
-					"name": "{{HOST}}/achievementsProviders/:providerId",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer {{token}}"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"name\":\"achievements_provider_update\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{HOST}}/achievementsProviders/{{providerId}}",
-							"host": [
-								"{{HOST}}"
-							],
-							"path": [
-								"achievementsProviders",
-								"{{providerId}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "{{HOST}}/achievementsProviders",
 					"request": {
 						"method": "GET",
@@ -1756,7 +1717,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6bcacd5a-63f9-4a51-bd9e-5ae8a38d76ff",
+								"id": "d202ba2e-447a-4263-b859-a3d839925ec4",
 								"exec": [
 									"var rsp = pm.response.json();",
 									"if(rsp.id) pm.environment.set(\"skillsProviderId\", rsp.id);"
@@ -1842,6 +1803,45 @@
 								"value": "application/json"
 							}
 						],
+						"url": {
+							"raw": "{{HOST}}/achievementsProviders/{{providerId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"achievementsProviders",
+								"{{providerId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/achievementsProviders/:providerId",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"achievements_provider_update\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{HOST}}/achievementsProviders/{{providerId}}",
 							"host": [
@@ -1961,7 +1961,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e7d908e0-c447-4369-b1a8-145ed7175b69",
+								"id": "a331068f-2514-4e54-bc6a-b10a5a1008e6",
 								"exec": [
 									"var rsp = pm.response.json();",
 									"if(rsp.id) pm.environment.set(\"skillsProviderId\", rsp.id);"
@@ -2061,7 +2061,7 @@
 					"response": []
 				},
 				{
-					"name": "{{HOST}}/users/{userId}/achievements/:achievementsProviderId Copy",
+					"name": "{{HOST}}/users/{userId}/achievements/:achievementsProviderId",
 					"request": {
 						"method": "PATCH",
 						"header": [
@@ -2126,7 +2126,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "6ff5177f-a8e8-40ca-a2ba-a695f7470c71",
+						"id": "d4e10b61-bd35-4180-a49a-624a7f7005b8",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2136,7 +2136,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "7f355639-83ba-436f-860c-2f6b69e7e6a3",
+						"id": "2c7b6bd2-8308-4d4b-9de1-1fcbeabc9a19",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2239,7 +2239,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c175f169-e856-4e13-b464-5d83e991df41",
+								"id": "da392aa4-ffa7-45f3-9252-fce3e934c0de",
 								"exec": [
 									"var rsp = pm.response.json();",
 									"if(rsp.id) pm.environment.set(\"skillsProviderId\", rsp.id);"
@@ -2339,32 +2339,6 @@
 					"response": []
 				},
 				{
-					"name": "{{HOST}}/users/{userId}/achievements/:achievementsProviderId",
-					"request": {
-						"method": "HEAD",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer {{token}}"
-							}
-						],
-						"url": {
-							"raw": "{{HOST}}/users/{{userId}}/achievements/{{achievementsProviderId}}",
-							"host": [
-								"{{HOST}}"
-							],
-							"path": [
-								"users",
-								"{{userId}}",
-								"achievements",
-								"{{achievementsProviderId}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "{{HOST}}/users/{userId}/attributes/:attributeId",
 					"request": {
 						"method": "PATCH",
@@ -2430,7 +2404,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "2bd04403-6c8a-4f07-83af-7856c2a3dfb4",
+						"id": "7594e0e2-6b83-4278-a278-ea0d33363895",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2440,7 +2414,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "89e240de-44cf-412d-b4ea-5b07e64c33a0",
+						"id": "416e1477-f448-4083-9cc2-1e09d332322e",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2529,7 +2503,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3d68bba0-e693-48eb-8ee3-5602170e5e68",
+								"id": "402ecedf-dca8-4edb-ac75-f4be5c018dbf",
 								"exec": [
 									"var rsp = pm.response.json();",
 									"if (rsp.id) pm.environment.set(\"skillId\", rsp.id);"
@@ -2696,7 +2670,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "cde3a432-445e-4a00-afea-643eca439b2a",
+						"id": "648e648f-58f0-4e49-ac1c-e8d1eca447f1",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2706,7 +2680,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b27fcc6d-4188-4561-b051-6d32c8c6d1a5",
+						"id": "a2669626-549b-49a6-9cec-ab8b3d2d98cc",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2795,7 +2769,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "361fad83-0c99-4fd2-940e-4816c4d60143",
+								"id": "172742be-3540-499d-a54b-1dbd18725f04",
 								"exec": [
 									"var rsp = pm.response.json();",
 									"if (rsp.id) pm.environment.set(\"skillId\", rsp.id);"
@@ -2928,7 +2902,7 @@
 					"response": []
 				},
 				{
-					"name": "{{HOST}}/attributes/:id",
+					"name": "{{HOST}}/attributes/:attributeId",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -2962,7 +2936,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "64b83ef5-8fd9-41ec-8ded-e6579c3b6c0c",
+						"id": "acb5924f-25b9-499b-8431-49b61e701d13",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2972,7 +2946,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "483740cb-4b43-43fd-bc54-7ad13db4e44a",
+						"id": "ea90d9cb-ba94-4661-88fc-97c209671e45",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -3201,7 +3175,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "2e8a48e3-a178-46ad-baf1-e32ef0b35cc5",
+						"id": "3b80deec-1d29-49af-b000-5b2ebb4bc89c",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -3211,7 +3185,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "01f5dd3d-7d54-4d65-be33-229bfa5e9419",
+						"id": "1eb1a086-c650-4ca1-930a-095ef4a08a7f",
 						"type": "text/javascript",
 						"exec": [
 							""
