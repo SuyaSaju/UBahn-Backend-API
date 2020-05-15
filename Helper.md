@@ -20,17 +20,17 @@
     - [X] Postman collection
 
 ### ERD
-- [ ] validations based on the ERD diagram
+- [X] validations based on the ERD diagram
 
 ### OTHERS
 - [ ] use the submission api as reference. Note that this uses yield, 
 but you need to use async await pattern
     - https://github.com/topcoder-platform/submissions-api/blob/develop/src/routes/SubmissionRoutes.js
-- [ ] Docker
-- [ ] Postman collection
+- [X] Docker
+- [X] Postman collection
 
 ### Before submission
-- [ ] Use proper authentication and remove bypassing
+- [X] Use proper authentication and remove bypassing
 - [ ] Remove secret keys from default.js
 - [ ] Remove Helper.md folder
 - [ ] Deployment guide and validation document
@@ -54,7 +54,7 @@ as 'id', can we use the 'id' as path param(attributes/:id). or we should strictl
 as mentioned in swagger
 - [ ] Considering achievementsProviderId and userId is unique, 
 {{HOST}}/users/{userId}/achievements/:achievementsProviderId will return only one result. But the swagger doc
-
+- what is the naming convention to be used for table names
 ## Helper Docs
 
 ### Swagger spec ref:

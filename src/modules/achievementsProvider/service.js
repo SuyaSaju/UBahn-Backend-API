@@ -8,7 +8,7 @@ const helper = require('../../common/helper')
 const methods = helper.getServiceMethods(
   models.AchievementsProvider,
   { name: joi.string().required() },
-  { name: joi.string() },
+  { name: joi.string().required() },
   { name: joi.string() },
   async query => {
     const dbQueries = []
