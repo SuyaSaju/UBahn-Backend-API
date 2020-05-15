@@ -33,7 +33,7 @@ const methods = helper.getServiceMethods(
       dbQueries.push(`${models.Organization.tableName}.name like '%${query.organizationName}%'`)
     }
     return dbQueries
-  }, [['userId', 'organizationId']])
+  }, [['userId', 'organizationId']], ['id'])
 
 module.exports = {
   ...methods

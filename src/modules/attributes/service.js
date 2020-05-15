@@ -30,8 +30,7 @@ const methods = helper.getServiceMethods(
     }
     return queries
   },
-  [['name', 'attributeGroupId']],
-  ['id'])
+  [['name', 'attributeGroupId']])
 
 module.exports = {
   ...methods
