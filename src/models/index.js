@@ -20,7 +20,7 @@ const consts = require('../consts')
 
 const DBHelper = require('./DBHelper')
 
-const tables = [
+const tables = {
   User,
   AchievementsProvider,
   Achievement,
@@ -34,7 +34,7 @@ const tables = [
   Organization,
   UsersRole,
   UsersSkill
-]
+}
 
 module.exports = {
   ...tables,
@@ -46,7 +46,7 @@ module.exports = {
  */
 module.exports.init = async () => {
   logger.info('connect to database, check/create tables ...')
-  for (const table of tables) {
-    await DBHelper.createTable(table)
+  for (const tableName in tables) {
+    await DBHelper.createTable(tables[tableName])
   }
 }
