@@ -1,3 +1,6 @@
+This Readme contains the all information about the project and setup.
+For the submission specific details, please go through [SubmissionReadMe.md](SubmissionReadMe.md) as well.
+
 # Project UBahn API
 
 ## Install software
@@ -12,15 +15,26 @@
 2. Visit [this link](https://console.aws.amazon.com/iam/home?region=us-east-1#/security_credentials) to download your "Access keys"
 3. Follow *Configuration* section to update config values, like database, aws key/secret etc ..
 4. Goto *UBahn-api*, run `npm i` and `npm run lint`
-5. Import mock data, `node scripts/db/genData.js`, this will create tables and gen some data for test (if you need this)
+5. Import mock data, `npm run mock-data`, this will create tables and gen some data for test (if you need this)
 6. Startup server `node app.js` or `npm run start`
+7. Server will be started at http://127.0.0.1:3001
 
 ## Docker
 
-Make sure all config values are right(aws key and secret), and you can run on local successful, then run below commands
+Make sure all config values are right(aws key and secret), and you mocked the data for testing(unless you dont have access to real existing database)
 
 - Run `docker build -t tc/ubahn_api .` to build image
 - Then run `docker run tc/ubahn_api -d` to startup image
+
+or else you can invoke the below commands to build & start the docker image respectively.
+
+```
+   npm run docker-build
+   npm run docker-run
+```
+
+The docker settings will expose the 3001 port to connect with the service as like in normal machine. 
+
 
 ## API endpoints verification
 

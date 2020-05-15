@@ -31,19 +31,23 @@ but you need to use async await pattern
 
 ### Before submission
 - [X] Use proper authentication and remove bypassing
+- [X] Deployment guide and validation document
+- [X] Update the existing README file with any additional info, as needed, for this contest
+- [X] Do not hard code tables names and use via constants and mention in readme
+- [X] Do optimization in [index.js](src/models/index.js) and mention in Readme
+- [X] Docker error fix
+- [X] User attribute routes scope fix
+- [ ] index creation for new table
+- [X] Added feature to remove id field from output
+
+### Final 
 - [ ] Remove secret keys from default.js
 - [ ] Remove Helper.md folder
-- [ ] Deployment guide and validation document
-- [ ] Update the existing README file with any additional info, as needed, for this contest
 - [ ] Run lint
 - [ ] Add code comments to improve score
-- [ ] Review service.js
-- [ ] Do not hard code tables names and use via constants and mention in readme
-- [ ] Do optimization in [index.js](src/models/index.js) and mention in Readme
-- [ ] Docker error fix
-- [ ] User attribute routes scope fix
-- [ ] index creation for new table
-- [ ] Added feature to remove id field from output
+
+
+
 
 ## Questions
 - [ ] If there are no results, what status code HEAD API endpoints should return? 

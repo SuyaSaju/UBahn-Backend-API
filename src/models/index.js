@@ -20,39 +20,33 @@ const consts = require('../consts')
 
 const DBHelper = require('./DBHelper')
 
-module.exports = {
+const tables = [
   User,
-  Role,
-  SkillsProvider,
-  Organization,
-  Skill,
-  UsersRole,
-  UsersSkill,
-  consts,
-  DBHelper,
   AchievementsProvider,
   Achievement,
   AttributeGroup,
   Attribute,
   UserAttribute,
-  ExternalProfile
+  ExternalProfile,
+  Role,
+  SkillsProvider,
+  Skill,
+  Organization,
+  UsersRole,
+  UsersSkill
+]
+
+module.exports = {
+  ...tables,
+  consts,
+  DBHelper
 }
 /**
  * create table
  */
 module.exports.init = async () => {
   logger.info('connect to database, check/create tables ...')
-  await DBHelper.createTable(User)
-  await DBHelper.createTable(Role)
-  await DBHelper.createTable(SkillsProvider)
-  await DBHelper.createTable(Skill)
-  await DBHelper.createTable(Organization)
-  await DBHelper.createTable(UsersRole)
-  await DBHelper.createTable(UsersSkill)
-  await DBHelper.createTable(AchievementsProvider)
-  await DBHelper.createTable(Achievement)
-  await DBHelper.createTable(AttributeGroup)
-  await DBHelper.createTable(Attribute)
-  await DBHelper.createTable(UserAttribute)
-  await DBHelper.createTable(ExternalProfile)
+  for (const table of tables) {
+    await DBHelper.createTable(table)
+  }
 }
